@@ -12,13 +12,14 @@ public class AlunoDAO {
     public List<Aluno> listarAlunos() {
         List<Aluno> alunos = new ArrayList<>();
 
-        String sql = "SELECT nome, tempo_envio, imagem FROM aluno";
+        String sql = "SELECT id, nome, tempo_envio, imagem FROM aluno";
 
         try (Connection conn = ConexaoMySQL.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql);
              ResultSet rs = stmt.executeQuery()) {
 
             while (rs.next()) {
+                int id = rs.getInt("id");
                 String nome = rs.getString("nome");
                 String tempoEnvio = rs.getString("tempo_envio");
                 String imagem = rs.getString("imagem");
