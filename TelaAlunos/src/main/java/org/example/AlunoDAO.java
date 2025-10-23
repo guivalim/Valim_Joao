@@ -26,9 +26,9 @@ public class AlunoDAO {
 
                 // se tempo_envio for null, usa o construtor alternativo
                 if (tempoEnvio == null || tempoEnvio.isEmpty())
-                    alunos.add(new Aluno(nome, imagem));
+                    alunos.add(new Aluno(id,nome, imagem));
                 else
-                    alunos.add(new Aluno(nome, tempoEnvio, imagem));
+                    alunos.add(new Aluno(id, nome, tempoEnvio, imagem));
             }
 
         } catch (SQLException e) {

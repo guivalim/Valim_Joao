@@ -8,19 +8,26 @@ public class Aluno {
 
     public Aluno(){}
 
-    public Aluno(int id, String nome, String tempoEnvio, String imagem){
+    // Construtor completo — com id
+    public Aluno(int id, String nome, String tempoEnvio, String imagem) {
         this.id = id;
         this.nome = nome;
         this.tempoEnvio = tempoEnvio;
+        this.imagem = imagem;
     }
 
+    // Construtor sem tempo de envio
+    public Aluno(int id, String nome, String imagem) {
+        this(id, nome, null, imagem);
+    }
+
+    // Outros construtores opcionais (sem id, se quiser manter)
     public Aluno(String nome, String tempoEnvio, String imagem) {
         this.nome = nome;
         this.tempoEnvio = tempoEnvio;
         this.imagem = imagem;
     }
 
-    // construtor sem tempo (corrigido)
     public Aluno(String nome, String imagem) {
         this(nome, null, imagem);
     }

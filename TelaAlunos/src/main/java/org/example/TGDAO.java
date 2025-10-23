@@ -20,6 +20,7 @@ public class TGDAO {
             stmt.setInt(1, idAluno);
             ResultSet rs = stmt.executeQuery();
 
+
             while (rs.next()) {
                 int id = rs.getInt("id");
                 int idAlunoDB = rs.getInt("id_aluno");
