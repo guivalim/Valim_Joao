@@ -3,6 +3,9 @@ package org.example;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -17,6 +20,7 @@ import javafx.scene.text.Font;
 import javafx.geometry.Pos;
 import javafx.scene.layout.Priority;
 import javafx.geometry.Insets;
+import javafx.stage.Stage;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -123,7 +127,28 @@ public class ControllerTelaAlunos {
         // Monta HBox
         hbox.getChildren().addAll(lblNome, espaco, lblTempo, img);
 
-        return hbox;
-    }
+        hbox.setOnMouseClicked(event -> {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("TelaAlunoEspecifico.fxml"));
+                Parent root = loader.load();
 
+                // pega o controller da nova tela
+                ControllerTelaAlunoEspecificos controllerTG = loader.getController();
+
+                // passa id e nome do aluno para carregar TGs
+                controllerTG.carregarTGs(aluno.getId(), aluno.getNome());
+
+                // abre a nova janela
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+                stage.setTitle("TGs do Aluno");
+                stage.show();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+
+        return hbox;
+
+}
 }

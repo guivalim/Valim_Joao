@@ -39,6 +39,13 @@ public class ControllerTelaAlunoEspecificos {
         TGDAO dao = new TGDAO();
         List<TG> tgs = dao.listarTGsPorAluno(idAluno);
 
+        // --- LOGS DE TESTE ---
+        System.out.println("Aluno: " + nomeAluno);
+        System.out.println("TGs encontradas: " + tgs.size());
+        for (TG tg : tgs) {
+            System.out.println(tg.getNomeArquivo() + " - " + tg.getDataEnvio() + " - " + tg.getImagemStatus());
+        }
+
         // exibe o nome do aluno no topo
         if (lblNomeAluno != null) {
             lblNomeAluno.setText(nomeAluno);

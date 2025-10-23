@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.ToggleButton?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.Region?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1356.0" style="-fx-background-color: #E0E0E0;" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ControllerTelaAlunoEspecificos">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="768.0" prefWidth="1356.0" style="-fx-background-color: #E0E0E0;" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ControllerTelaAlunoEspecificos">
    <children>
       <HBox layoutX="8.0" layoutY="42.0" prefHeight="140.0" prefWidth="1356.0" style="-fx-border-color: transparent transparent #999999 transparent;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
          <children>
@@ -95,7 +87,7 @@
             </HBox>
          </children>
       </HBox>
-      <ScrollPane fitToWidth="true" layoutX="3.2" layoutY="159.2" prefHeight="606.0" prefWidth="1350.0" style="-fx-background-color: #E0E0E0;" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="159.0">
+      <ScrollPane fitToWidth="true" layoutX="-3.0" layoutY="156.0" prefHeight="609.0" prefWidth="1356.0" style="-fx-background-color: #E0E0E0;" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="-3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="156.0">
          <content>
             <VBox fx:id="VBoxListaVersoes" prefHeight="649.0" prefWidth="1334.0" style="-fx-background-color: #E0E0E0;">
                <children>
