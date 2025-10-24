@@ -1,57 +1,78 @@
 package org.example;
 
+/**
+ * Esta classe agora representa uma VERSÃO (tg_versao),
+ * mas "enriquecida" com dados do portfólio (como aluno_id e titulo).
+ */
 public class TG {
-    private int id;
-    private int idAluno;
-    private String nomeArquivo;
-    private String dataEnvio;
-    private String imagemStatus;
-    private String conteudo;
 
-    public TG(){}
+    private int id; // ID da tg_versao
+    private int alunoId; // ID do aluno (vindo da tg_portfolio)
+    private String nomeArquivo; // Usaremos o "titulo" da tg_portfolio aqui
+    private String dataEnvio; // Usaremos a "updated_at" da tg_versao
+    private String imagemStatus; // Mapeado a partir de "avaliado"
+    private String conteudo; // O "conteudo_md" da tg_versao
 
-    public TG(int id, int idAluno, String nomeArquivo, String dataEnvio, String imagemStatus, String conteudo) {
+    // Construtor vazio (boa prática)
+    public TG() {}
+
+    // Construtor completo que o TGDAO usará
+    public TG(int id, int alunoId, String nomeArquivo, String dataEnvio, String imagemStatus, String conteudo) {
         this.id = id;
-        this.idAluno = idAluno;
+        this.alunoId = alunoId;
         this.nomeArquivo = nomeArquivo;
         this.dataEnvio = dataEnvio;
         this.imagemStatus = imagemStatus;
         this.conteudo = conteudo;
     }
 
-    public TG(String nomeArquivo, String dataEnvio, String imagemStatus) {
+    // --- Getters e Setters ---
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getAlunoId() {
+        return alunoId;
+    }
+
+    public void setAlunoId(int alunoId) {
+        this.alunoId = alunoId;
+    }
+
+    public String getNomeArquivo() {
+        return nomeArquivo;
+    }
+
+    public void setNomeArquivo(String nomeArquivo) {
         this.nomeArquivo = nomeArquivo;
+    }
+
+    public String getDataEnvio() {
+        return dataEnvio;
+    }
+
+    public void setDataEnvio(String dataEnvio) {
         this.dataEnvio = dataEnvio;
+    }
+
+    public String getImagemStatus() {
+        return imagemStatus;
+    }
+
+    public void setImagemStatus(String imagemStatus) {
         this.imagemStatus = imagemStatus;
     }
 
-    public TG(String nomeArquivo, String imagemStatus) {
-
-        this(nomeArquivo,null,imagemStatus);
-    }
-
-    // Getters e Setters
-
-    public String getConteudo(){
+    public String getConteudo() {
         return conteudo;
     }
-    public void setConteudo(String conteudo){
+
+    public void setConteudo(String conteudo) {
         this.conteudo = conteudo;
     }
-
-
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
-
-    public int getIdAluno() { return idAluno; }
-    public void setIdAluno(int idAluno) { this.idAluno = idAluno; }
-
-    public String getNomeArquivo() { return nomeArquivo; }
-    public void setNomeArquivo(String nomeArquivo) { this.nomeArquivo = nomeArquivo; }
-
-    public String getDataEnvio() { return dataEnvio; }
-    public void setDataEnvio(String dataEnvio) { this.dataEnvio = dataEnvio; }
-
-    public String getImagemStatus() { return imagemStatus; }
-    public void setImagemStatus(String imagemStatus) { this.imagemStatus = imagemStatus; }
 }
