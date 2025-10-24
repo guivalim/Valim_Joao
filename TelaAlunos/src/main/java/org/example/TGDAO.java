@@ -12,7 +12,7 @@ public class TGDAO {
     public List<TG> listarTGsPorAluno(int idAluno) {
         List<TG> tgs = new ArrayList<>();
 
-        String sql = "SELECT id, id_aluno, nome_arquivo, data_envio, imagem_status FROM tg WHERE id_aluno = ?";
+        String sql = "SELECT id, id_aluno, nome_arquivo, data_envio, imagem_status, conteudo FROM tg WHERE id_aluno = ?";
 
         try (Connection conn = ConexaoMySQL.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -27,8 +27,9 @@ public class TGDAO {
                 String nomeArquivo = rs.getString("nome_arquivo");
                 String dataEnvio = rs.getString("data_envio");
                 String imagemStatus = rs.getString("imagem_status");
+                String conteudo = rs.getString("conteudo");
 
-                TG tg = new TG(id, idAlunoDB, nomeArquivo, dataEnvio, imagemStatus);
+                TG tg = new TG(id, idAlunoDB, nomeArquivo, dataEnvio, imagemStatus, conteudo);
                 tgs.add(tg);
             }
 

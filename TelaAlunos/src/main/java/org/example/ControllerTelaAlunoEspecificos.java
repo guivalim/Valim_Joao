@@ -1,8 +1,11 @@
 package org.example;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.ToggleButton;
@@ -13,8 +16,10 @@ import javafx.scene.layout.Priority;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.stage.Stage;
 
 import java.awt.*;
+import java.io.IOException;
 import java.util.List;
 
 public class ControllerTelaAlunoEspecificos {
@@ -109,6 +114,22 @@ public class ControllerTelaAlunoEspecificos {
 
         // Monta HBox
         hbox.getChildren().addAll(lblNome, espaco, lblTempo, img);
+
+        hbox.setOnMouseClicked(event -> {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("telaFeedback.fxml"));
+                Parent root = loader.load();
+
+                // pega o controller e passa o TG selecionado
+                ControllerFeedback controller = loader.getController();
+                controller.exibirTG(tg);
+
+                Stage stage = (Stage) hbox.getScene().getWindow();
+                stage.setScene(new Scene(root));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
 
         return hbox;
     }

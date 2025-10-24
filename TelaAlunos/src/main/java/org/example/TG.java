@@ -6,15 +6,17 @@ public class TG {
     private String nomeArquivo;
     private String dataEnvio;
     private String imagemStatus;
+    private String conteudo;
 
     public TG(){}
 
-    public TG(int id, int idAluno, String nomeArquivo, String dataEnvio, String imagemStatus) {
+    public TG(int id, int idAluno, String nomeArquivo, String dataEnvio, String imagemStatus, String conteudo) {
         this.id = id;
         this.idAluno = idAluno;
         this.nomeArquivo = nomeArquivo;
         this.dataEnvio = dataEnvio;
         this.imagemStatus = imagemStatus;
+        this.conteudo = conteudo;
     }
 
     public TG(String nomeArquivo, String dataEnvio, String imagemStatus) {
@@ -29,6 +31,15 @@ public class TG {
     }
 
     // Getters e Setters
+
+    public String getConteudo(){
+        return conteudo;
+    }
+    public void setConteudo(String conteudo){
+        this.conteudo = conteudo;
+    }
+
+
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
